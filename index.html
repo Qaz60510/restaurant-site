@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicious Bites｜美味一口</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+    crossorigin="anonymous" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+    }
+
+    .navbar {
+      background-color: #b22222;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .btn {
+      color: white !important;
+    }
+
+    .carousel-item>img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h5 {
+      color: #b22222;
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #b22222;
+      color: white;
+      padding: 1.5rem 0;
+    }
+
+    .modal-body img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+   .btn-function {
+    background-color: #a8d0ff; /* 淺藍 */
+    color: #000;
+    border: none;
+  }
+
+  /* 滑鼠移上 */
+  .btn-function:hover,
+  .btn-function:focus {
+    background-color: #5a9bf6; /* 較深藍 */
+    color: #fff;
+  }
+
+  /* 當 dropdown 打開時 (show class) */
+  .dropdown.show > .btn-function {
+    background-color: #1e4ed8; /* 深藍 */
+    color: #fff;
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils"></i> &nbsp;&nbsp;&nbsp;Delicious Bites&nbsp;&nbsp;<i class="fa-solid fa-cookie-bite"></i>&nbsp;&nbsp;美味一口</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <div class="dropdown ms-auto">
+              <button class="btn btn-function dropdown-toggle" type="button" id="dropdownMenuButton"
+      data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user me-2"></i>選擇服務
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#mainCarousel">首頁</a></li>
+                <li><a class="dropdown-item" href="#menu">菜單推薦</a></li>
+                <li><a class="dropdown-item" href="#video">影片介紹</a></li>
+                <li><a class="dropdown-item" href="#reservation">線上訂位</a></li>
+              </ul>
+            </div>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- 小圓點指示器 -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- 輪播內容 -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-aos="zoom-in">
+        <img src="images/food-carousel1.jpg" class="d-block w-100" alt="主視覺美食" />
+      </div>
+      <div class="carousel-item" data-aos="zoom-in">
+        <img src="images/food-carousel2.jpg" class="d-block w-100" alt="次要美食" />
+      </div>
+      <div class="carousel-item" data-aos="zoom-in">
+        <img src="images/food-carousel3.jpg" class="d-block w-100" alt="其他美食" />
+      </div>
+    </div>
+
+    <!-- 左箭頭 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">上一張</span>
+    </button>
+
+    <!-- 右箭頭 -->
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">下一張</span>
+    </button>
+  </div>
+
+  <!-- Menu Section -->
+  <!-- Menu Section -->
+  <div class="container my-5" id="menu">
+    <h2 class="text-center mb-4"><i class="fa-solid fa-face-laugh-beam"></i>&nbsp;&nbsp;推薦餐點</h2>
+    <div class="row">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="card mb-4">
+          <img src="images/food-menu1.jpg" class="card-img-top img-fluid" alt="餐點 1" />
+          <div class="card-body">
+            <h5 class="card-title">義大利海鮮麵</h5>
+            <p class="card-text">新鮮海味與手工麵條的完美結合。</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSeafood"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card mb-4">
+          <img src="images/food-menu2.jpg" class="card-img-top img-fluid" alt="餐點 2" />
+          <div class="card-body">
+            <h5 class="card-title">炙燒牛排</h5>
+            <p class="card-text">外酥內嫩，配上特製紅酒醬汁。</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSteak"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card mb-4">
+          <img src="images/food-menu3.jpg" class="card-img-top img-fluid" alt="餐點 3" />
+          <div class="card-body">
+            <h5 class="card-title">香煎鮭魚</h5>
+            <p class="card-text">簡單調味帶出鮮甜風味。</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSalmon"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 義大利海鮮麵 Modal -->
+  <div class="modal fade" id="modalSeafood" tabindex="-1" aria-labelledby="modalSeafoodLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSeafoodLabel">套餐一</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/food-menu1.jpg" class="img-fluid mb-3" alt="義大利海鮮麵" />
+          <p>義大利海鮮麵使用新鮮的蝦、蛤蜊及花枝，搭配手工義大利麵條，並以香濃的白酒奶油醬汁提味，口感豐富且鮮美。</p>
+          <ul>
+            <li>份量：適合1人份</li>
+            <li>價格：NT$350</li>
+            <li>過敏原：含海鮮、奶製品</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 炙燒牛排 Modal -->
+  <div class="modal fade" id="modalSteak" tabindex="-1" aria-labelledby="modalSteakLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSteakLabel">套餐二</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/food-menu2.jpg" class="img-fluid mb-3" alt="炙燒牛排" />
+          <p>炙燒牛排外皮微焦酥脆，內部鮮嫩多汁，搭配自家調製的紅酒醬汁，風味絕佳，是肉食愛好者的首選。</p>
+          <ul>
+            <li>份量：約200克</li>
+            <li>價格：NT$580</li>
+            <li>過敏原：含牛肉</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 香煎鮭魚 Modal -->
+  <div class="modal fade" id="modalSalmon" tabindex="-1" aria-labelledby="modalSalmonLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSalmonLabel">套餐三</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/food-menu3.jpg" class="img-fluid mb-3" alt="香煎鮭魚" />
+          <p>香煎鮭魚以簡單鹽與胡椒調味，鎖住魚肉鮮甜，搭配柑橘醬汁，帶來清爽口感。</p>
+          <ul>
+            <li>份量：約180克</li>
+            <li>價格：NT$450</li>
+            <li>過敏原：含魚類</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Video Section -->
+  <div class="container my-5" id="video">
+    <h2 class="text-center mb-4"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;影片</h2>
+    <div class="row" data-aos="fade-up">
+      <div class="col-md-8 mx-auto">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/kmsfLbORF2o?rel=0"
+            title="Southwest Ground Turkey Stuffed Peppers Cooking Tutorial" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Section -->
+  <div class="container my-5" id="reservation">
+    <h2 class="text-center mb-4"><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;線上訂位</h2>
+
+    <!-- 兩個打開 Modal 的按鈕 -->
+    <div class="text-center mb-4">
+      <button id="openModalA" class="btn btn-primary me-3"><i class="fa-regular fa-clipboard"></i>&nbsp;&nbsp;訂位規則</button>
+      <button id="openModalB" class="btn btn-danger"><i class="fa-regular fa-hand"></i>&nbsp;&nbsp;注意事項</button>
+    </div>
+
+    <div class="row justify-content-center" data-aos="fade-up">
+      <div class="col-md-6">
+        <form id="bookingForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">姓名</label>
+            <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">電話</label>
+            <input type="tel" class="form-control" id="phone" placeholder="例如：0912-345-678" required />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">訂位日期</label>
+            <input type="date" class="form-control" id="date" required />
+          </div>
+          <div class="mb-3">
+            <label for="people" class="form-label">人數</label>
+            <select class="form-select" id="people" required>
+              <option value="">請選擇人數</option>
+              <option value="1">1 人</option>
+              <option value="2">2 人</option>
+              <option value="3">3 人</option>
+              <option value="4">4 人</option>
+              <option value="5">5 人</option>
+              <option value="6">6 人以上</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-danger w-100"><i class="fa-solid fa-hand-peace"></i></i>&nbsp;&nbsp;送出訂位</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal A -->
+  <div class="modal" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title"> 親愛的顧客您好，為提供您更好的用餐體驗，請留意以下訂位規則：</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+
+        <div class="modal-body">
+
+
+
+          1.訂位時間：每日開放午餐與晚餐時段訂位，最晚請於用餐前 2 小時完成預約。
+          <br />
+          2.訂位人數：每筆訂位最多 6 人，如超過請來電洽詢。
+          <br />
+          3.保留時間：訂位將為您保留 10 分鐘，逾時將視現場狀況安排候補入座。
+          <br />
+          4.特殊需求：如需嬰兒座椅、素食餐點或其他需求，請於備註中說明。
+          <br />
+          5.取消或更改：若需取消或更改訂位，請最晚於用餐前 1 小時通知我們。
+          <br />
+          6.團體訂位：超過 10 人以上的團體用餐，請來電或使用官方 LINE 聯繫我們。
+          <br />
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">關閉</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal B -->
+  <div class="modal" id="myModalB" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">為維護所有顧客的用餐品質，敬請配合以下事項：</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+
+        <div class="modal-body">
+
+
+          1.禁止攜帶外食：本餐廳禁止攜帶外食及飲品入內，特殊情況請事先告知。
+          <br />
+          2.禁止吸菸：全店禁菸，包含電子煙與加熱煙。
+          <br />
+          3.寵物入內：除導盲犬外，恕不開放攜帶寵物入內。
+          <br />
+          4.兒童安全：若有兒童同行，請家長務必留意孩童行動安全。
+          <br />
+          5.用餐時間限制：尖峰時段每桌用餐時間為 90 分鐘，敬請配合。
+          <br />
+          6.拍照禮儀：歡迎拍照打卡，但請勿影響他人用餐。
+          <br />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">關閉</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-0">© 2025 Delicious Bites. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    AOS.init();
+
+    // 表單送出提示
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('感謝您的訂位，我們將盡快與您聯繫！');
+      this.reset();
+    });
+
+    // jQuery 監聽按鈕開啟 Modal
+    $(document).ready(function () {
+      var modalA = new bootstrap.Modal(document.getElementById('myModal'));
+      var modalB = new bootstrap.Modal(document.getElementById('myModalB'));
+
+      $('#openModalA').click(function () {
+        modalA.show();
+      });
+
+      $('#openModalB').click(function () {
+        modalB.show();
+      });
+    });
+  </script>
+</body>
+
+</html>
