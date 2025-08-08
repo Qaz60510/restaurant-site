@@ -102,7 +102,8 @@
       user-select: none;
       font-weight: bold;
       font-size: 1.2rem;
-      color: #1e90ff; /* 預設藍色 */
+      color: #1e90ff;
+      /* 預設藍色 */
     }
   </style>
 </head>
@@ -112,8 +113,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils"></i> &nbsp;&nbsp;&nbsp;Delicious Bites&nbsp;&nbsp;<i
-          class="fa-solid fa-cookie-bite"></i>&nbsp;&nbsp;美味一口</a>
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils"></i> &nbsp;&nbsp;&nbsp;Delicious
+        Bites&nbsp;&nbsp;<i class="fa-solid fa-cookie-bite"></i>&nbsp;&nbsp;美味一口</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon bg-light"></span>
       </button>
@@ -121,8 +122,8 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <div class="dropdown ms-auto">
-              <button class="btn btn-function dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <button class="btn btn-function dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-user me-2"></i>選擇服務
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -130,6 +131,7 @@
                 <li><a class="dropdown-item" href="#menu">菜單推薦</a></li>
                 <li><a class="dropdown-item" href="#video">影片介紹</a></li>
                 <li><a class="dropdown-item" href="#reservation">線上訂位</a></li>
+                <li><a class="dropdown-item" href="#reviews">顧客評論</a></li> <!-- 第五項 -->
               </ul>
             </div>
 
@@ -226,8 +228,7 @@
       <div class="modal-content">
         <div class="modal-header bg-danger text-white">
           <h5 class="modal-title" id="modalSeafoodLabel">義大利海鮮麵</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-            aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <img src="images/food-menu1.jpg" alt="義大利海鮮麵" />
@@ -248,8 +249,7 @@
       <div class="modal-content">
         <div class="modal-header bg-danger text-white">
           <h5 class="modal-title" id="modalSteakLabel">炙燒牛排</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-            aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <img src="images/food-menu2.jpg" alt="炙燒牛排" />
@@ -270,8 +270,7 @@
       <div class="modal-content">
         <div class="modal-header bg-danger text-white">
           <h5 class="modal-title" id="modalSalmonLabel">香煎鮭魚</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-            aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <img src="images/food-menu3.jpg" alt="香煎鮭魚" />
@@ -281,6 +280,18 @@
             <li>過敏原：含魚類、奶製品</li>
           </ul>
           <p>香煎鮭魚以簡單調味展現鮮甜原味，健康又美味。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="container my-5" id="video">
+    <h2 class="text-center mb-4">🎥 影片</h2>
+    <div class="row" data-aos="fade-up">
+      <div class="col-md-8 mx-auto">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/kmsfLbORF2o?rel=0" 
+                  title="Southwest Ground Turkey Stuffed Peppers Cooking Tutorial" 
+                  allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -320,11 +331,62 @@
       </div>
     </div>
   </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
 
+    document.addEventListener('DOMContentLoaded', () => {
+      // 價格切換功能
+      const priceSpans = document.querySelectorAll('.price span');
+      priceSpans.forEach(span => {
+        span.addEventListener('click', () => {
+          priceSpans.forEach(s => s.classList.remove('active'));
+          span.classList.add('active');
+        });
+      });
+
+      // 訂位表單送出事件
+      const bookingForm = document.getElementById('bookingForm');
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const date = document.getElementById('date').value;
+        const people = document.getElementById('people').value;
+
+        if (!name || !phone || !date || !people) {
+          alert('請填寫所有欄位');
+          return;
+        }
+
+        alert(`訂位成功！\n姓名：${name}\n電話：${phone}\n日期：${date}\n人數：${people}人`);
+
+        bookingForm.reset();
+      });
+    });
+  </script>
+  <section id="reviews" class="container my-5">
+    <h2 class="text-center mb-4"><i class="fa-solid fa-comment-dots"></i> 顧客評論</h2>
+    <div class="row">
+      <div class="col-md-6 mb-3" data-aos="fade-right">
+        <div class="p-3 border rounded shadow-sm bg-white">
+          <p>🌟🌟🌟🌟🌟 「餐點非常美味，氣氛也很棒！」</p>
+          <p class="text-end text-muted">— Amy</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3" data-aos="fade-left">
+        <div class="p-3 border rounded shadow-sm bg-white">
+          <p>🌟🌟🌟🌟 「牛排口感一流，還會再回來！」</p>
+          <p class="text-end text-muted">— Kevin</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Footer -->
   <footer class="text-center">
     <div class="container">
-      <p><i class="fa-solid fa-utensils"></i>&nbsp;Copyright &copy; 2023 Delicious Bites 美味一口. All rights reserved.</p>
+      <p><i class="fa-solid fa-utensils"></i>&nbsp;Copyright &copy; 2025 Delicious Bites 美味一口. All rights reserved.</p>
     </div>
   </footer>
 
