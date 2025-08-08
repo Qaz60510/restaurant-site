@@ -13,8 +13,8 @@
   <!-- AOS CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
 
   <style>
     body {
@@ -74,24 +74,36 @@
       border-radius: 8px;
     }
 
-   .btn-function {
-    background-color: #a8d0ff; /* 淺藍 */
-    color: #000;
-    border: none;
-  }
+    .btn-function {
+      background-color: #a8d0ff;
+      /* 淺藍 */
+      color: #000;
+      border: none;
+    }
 
-  /* 滑鼠移上 */
-  .btn-function:hover,
-  .btn-function:focus {
-    background-color: #5a9bf6; /* 較深藍 */
-    color: #fff;
-  }
+    /* 滑鼠移上 */
+    .btn-function:hover,
+    .btn-function:focus {
+      background-color: #5a9bf6;
+      /* 較深藍 */
+      color: #fff;
+    }
 
-  /* 當 dropdown 打開時 (show class) */
-  .dropdown.show > .btn-function {
-    background-color: #1e4ed8; /* 深藍 */
-    color: #fff;
-  }
+    /* 當 dropdown 打開時 (show class) */
+    .dropdown.show>.btn-function {
+      background-color: #1e4ed8;
+      /* 深藍 */
+      color: #fff;
+    }
+
+    /* 價格可點擊變色 */
+    .price {
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #1e90ff; /* 預設藍色 */
+    }
   </style>
 </head>
 
@@ -100,7 +112,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils"></i> &nbsp;&nbsp;&nbsp;Delicious Bites&nbsp;&nbsp;<i class="fa-solid fa-cookie-bite"></i>&nbsp;&nbsp;美味一口</a>
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils"></i> &nbsp;&nbsp;&nbsp;Delicious Bites&nbsp;&nbsp;<i
+          class="fa-solid fa-cookie-bite"></i>&nbsp;&nbsp;美味一口</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon bg-light"></span>
       </button>
@@ -108,8 +121,8 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <div class="dropdown ms-auto">
-              <button class="btn btn-function dropdown-toggle" type="button" id="dropdownMenuButton"
-      data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-function dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <i class="fa-solid fa-user me-2"></i>選擇服務
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -165,7 +178,6 @@
   </div>
 
   <!-- Menu Section -->
-  <!-- Menu Section -->
   <div class="container my-5" id="menu">
     <h2 class="text-center mb-4"><i class="fa-solid fa-face-laugh-beam"></i>&nbsp;&nbsp;推薦餐點</h2>
     <div class="row">
@@ -175,7 +187,9 @@
           <div class="card-body">
             <h5 class="card-title">義大利海鮮麵</h5>
             <p class="card-text">新鮮海味與手工麵條的完美結合。</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSeafood"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+            <p class="price" id="priceSeafoodCard">價格：NT$350</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSeafood"><i
+                class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
           </div>
         </div>
       </div>
@@ -185,7 +199,9 @@
           <div class="card-body">
             <h5 class="card-title">炙燒牛排</h5>
             <p class="card-text">外酥內嫩，配上特製紅酒醬汁。</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSteak"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+            <p class="price" id="priceSteakCard">價格：NT$480</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSteak"><i
+                class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
           </div>
         </div>
       </div>
@@ -195,7 +211,9 @@
           <div class="card-body">
             <h5 class="card-title">香煎鮭魚</h5>
             <p class="card-text">簡單調味帶出鮮甜風味。</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSalmon"><i class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
+            <p class="price" id="priceSalmonCard">價格：NT$420</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalSalmon"><i
+                class="fa-solid fa-child-reaching"></i>&nbsp;&nbsp;了解更多</a>
           </div>
         </div>
       </div>
@@ -204,23 +222,21 @@
 
   <!-- 義大利海鮮麵 Modal -->
   <div class="modal fade" id="modalSeafood" tabindex="-1" aria-labelledby="modalSeafoodLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalSeafoodLabel">套餐一</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="modalSeafoodLabel">義大利海鮮麵</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+            aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="images/food-menu1.jpg" class="img-fluid mb-3" alt="義大利海鮮麵" />
-          <p>義大利海鮮麵使用新鮮的蝦、蛤蜊及花枝，搭配手工義大利麵條，並以香濃的白酒奶油醬汁提味，口感豐富且鮮美。</p>
-          <ul>
+          <img src="images/food-menu1.jpg" alt="義大利海鮮麵" />
+          <ul class="mt-3">
             <li>份量：適合1人份</li>
-            <li>價格：NT$350</li>
+            <li>價格：NT$<span class="price" id="priceSeafoodModal">350</span></li>
             <li>過敏原：含海鮮、奶製品</li>
           </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+          <p>義大利海鮮麵以新鮮海鮮與手工義大利麵搭配，口感豐富，是經典之選。</p>
         </div>
       </div>
     </div>
@@ -228,23 +244,21 @@
 
   <!-- 炙燒牛排 Modal -->
   <div class="modal fade" id="modalSteak" tabindex="-1" aria-labelledby="modalSteakLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalSteakLabel">套餐二</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="modalSteakLabel">炙燒牛排</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+            aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="images/food-menu2.jpg" class="img-fluid mb-3" alt="炙燒牛排" />
-          <p>炙燒牛排外皮微焦酥脆，內部鮮嫩多汁，搭配自家調製的紅酒醬汁，風味絕佳，是肉食愛好者的首選。</p>
-          <ul>
-            <li>份量：約200克</li>
-            <li>價格：NT$580</li>
-            <li>過敏原：含牛肉</li>
+          <img src="images/food-menu2.jpg" alt="炙燒牛排" />
+          <ul class="mt-3">
+            <li>份量：適合1人份</li>
+            <li>價格：NT$<span class="price" id="priceSteakModal">480</span></li>
+            <li>過敏原：含牛肉、奶製品</li>
           </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+          <p>炙燒牛排外酥內嫩，配上獨家紅酒醬汁，滿足味蕾。</p>
         </div>
       </div>
     </div>
@@ -252,66 +266,42 @@
 
   <!-- 香煎鮭魚 Modal -->
   <div class="modal fade" id="modalSalmon" tabindex="-1" aria-labelledby="modalSalmonLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalSalmonLabel">套餐三</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="modalSalmonLabel">香煎鮭魚</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+            aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="images/food-menu3.jpg" class="img-fluid mb-3" alt="香煎鮭魚" />
-          <p>香煎鮭魚以簡單鹽與胡椒調味，鎖住魚肉鮮甜，搭配柑橘醬汁，帶來清爽口感。</p>
-          <ul>
-            <li>份量：約180克</li>
-            <li>價格：NT$450</li>
-            <li>過敏原：含魚類</li>
+          <img src="images/food-menu3.jpg" alt="香煎鮭魚" />
+          <ul class="mt-3">
+            <li>份量：適合1人份</li>
+            <li>價格：NT$<span class="price" id="priceSalmonModal">420</span></li>
+            <li>過敏原：含魚類、奶製品</li>
           </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+          <p>香煎鮭魚以簡單調味展現鮮甜原味，健康又美味。</p>
         </div>
       </div>
     </div>
   </div>
-
-
-  <!-- Video Section -->
-  <div class="container my-5" id="video">
-    <h2 class="text-center mb-4"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;影片</h2>
-    <div class="row" data-aos="fade-up">
-      <div class="col-md-8 mx-auto">
-        <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/kmsfLbORF2o?rel=0"
-            title="Southwest Ground Turkey Stuffed Peppers Cooking Tutorial" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Reservation Section -->
   <div class="container my-5" id="reservation">
-    <h2 class="text-center mb-4"><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;線上訂位</h2>
-
-    <!-- 兩個打開 Modal 的按鈕 -->
-    <div class="text-center mb-4">
-      <button id="openModalA" class="btn btn-primary me-3"><i class="fa-regular fa-clipboard"></i>&nbsp;&nbsp;訂位規則</button>
-      <button id="openModalB" class="btn btn-danger"><i class="fa-regular fa-hand"></i>&nbsp;&nbsp;注意事項</button>
-    </div>
-
+    <h2 class="text-center mb-4">📅 線上訂位</h2>
     <div class="row justify-content-center" data-aos="fade-up">
       <div class="col-md-6">
         <form id="bookingForm">
           <div class="mb-3">
             <label for="name" class="form-label">姓名</label>
-            <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required />
+            <input type="text" class="form-control" id="name" placeholder="請輸入姓名" required>
           </div>
           <div class="mb-3">
             <label for="phone" class="form-label">電話</label>
-            <input type="tel" class="form-control" id="phone" placeholder="例如：0912-345-678" required />
+            <input type="tel" class="form-control" id="phone" placeholder="例如：0912-345-678" required>
           </div>
           <div class="mb-3">
             <label for="date" class="form-label">訂位日期</label>
-            <input type="date" class="form-control" id="date" required />
+            <input type="date" class="form-control" id="date" required>
           </div>
           <div class="mb-3">
             <label for="people" class="form-label">人數</label>
@@ -325,80 +315,8 @@
               <option value="6">6 人以上</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-danger w-100"><i class="fa-solid fa-hand-peace"></i></i>&nbsp;&nbsp;送出訂位</button>
+          <button type="submit" class="btn btn-danger w-100">送出訂位</button>
         </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal A -->
-  <div class="modal" id="myModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <h4 class="modal-title"> 親愛的顧客您好，為提供您更好的用餐體驗，請留意以下訂位規則：</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
-        </div>
-
-        <div class="modal-body">
-
-
-
-          1.訂位時間：每日開放午餐與晚餐時段訂位，最晚請於用餐前 2 小時完成預約。
-          <br />
-          2.訂位人數：每筆訂位最多 6 人，如超過請來電洽詢。
-          <br />
-          3.保留時間：訂位將為您保留 10 分鐘，逾時將視現場狀況安排候補入座。
-          <br />
-          4.特殊需求：如需嬰兒座椅、素食餐點或其他需求，請於備註中說明。
-          <br />
-          5.取消或更改：若需取消或更改訂位，請最晚於用餐前 1 小時通知我們。
-          <br />
-          6.團體訂位：超過 10 人以上的團體用餐，請來電或使用官方 LINE 聯繫我們。
-          <br />
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">關閉</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal B -->
-  <div class="modal" id="myModalB" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <h4 class="modal-title">為維護所有顧客的用餐品質，敬請配合以下事項：</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
-        </div>
-
-        <div class="modal-body">
-
-
-          1.禁止攜帶外食：本餐廳禁止攜帶外食及飲品入內，特殊情況請事先告知。
-          <br />
-          2.禁止吸菸：全店禁菸，包含電子煙與加熱煙。
-          <br />
-          3.寵物入內：除導盲犬外，恕不開放攜帶寵物入內。
-          <br />
-          4.兒童安全：若有兒童同行，請家長務必留意孩童行動安全。
-          <br />
-          5.用餐時間限制：尖峰時段每桌用餐時間為 90 分鐘，敬請配合。
-          <br />
-          6.拍照禮儀：歡迎拍照打卡，但請勿影響他人用餐。
-          <br />
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">關閉</button>
-        </div>
-
       </div>
     </div>
   </div>
@@ -406,36 +324,141 @@
   <!-- Footer -->
   <footer class="text-center">
     <div class="container">
-      <p class="mb-0">© 2025 Delicious Bites. All rights reserved.</p>
+      <p><i class="fa-solid fa-utensils"></i>&nbsp;Copyright &copy; 2023 Delicious Bites 美味一口. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+  <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
   <script>
     AOS.init();
 
-    // 表單送出提示
-    document.getElementById('bookingForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('感謝您的訂位，我們將盡快與您聯繫！');
-      this.reset();
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      // 卡片價格元素
+      const priceSeafoodCard = document.getElementById('priceSeafoodCard');
+      const priceSteakCard = document.getElementById('priceSteakCard');
+      const priceSalmonCard = document.getElementById('priceSalmonCard');
 
-    // jQuery 監聽按鈕開啟 Modal
-    $(document).ready(function () {
-      var modalA = new bootstrap.Modal(document.getElementById('myModal'));
-      var modalB = new bootstrap.Modal(document.getElementById('myModalB'));
+      // Modal價格元素
+      const priceSeafoodModal = document.getElementById('priceSeafoodModal');
+      const priceSteakModal = document.getElementById('priceSteakModal');
+      const priceSalmonModal = document.getElementById('priceSalmonModal');
 
-      $('#openModalA').click(function () {
-        modalA.show();
+      // 原價與折扣價設定
+      const originalSeafood = 350;
+      const discountedSeafood = 280;
+      const originalSteak = 480;
+      const discountedSteak = 400;
+      const originalSalmon = 420;
+      const discountedSalmon = 350;
+
+      // 狀態追蹤：是否顯示折扣價
+      let seafoodCardDiscounted = false;
+      let steakCardDiscounted = false;
+      let salmonCardDiscounted = false;
+
+      let seafoodModalDiscounted = false;
+      let steakModalDiscounted = false;
+      let salmonModalDiscounted = false;
+
+      // 初始設定價格與藍色文字
+      priceSeafoodCard.textContent = `原價：NT$${originalSeafood}`;
+      priceSeafoodCard.style.color = '#1e90ff';
+
+      priceSteakCard.textContent = `原價：NT$${originalSteak}`;
+      priceSteakCard.style.color = '#1e90ff';
+
+      priceSalmonCard.textContent = `原價：NT$${originalSalmon}`;
+      priceSalmonCard.style.color = '#1e90ff';
+
+      priceSeafoodModal.textContent = originalSeafood;
+      priceSeafoodModal.style.color = '#1e90ff';
+
+      priceSteakModal.textContent = originalSteak;
+      priceSteakModal.style.color = '#1e90ff';
+
+      priceSalmonModal.textContent = originalSalmon;
+      priceSalmonModal.style.color = '#1e90ff';
+
+      // 卡片價格點擊切換
+      priceSeafoodCard.addEventListener('click', () => {
+        if (!seafoodCardDiscounted) {
+          priceSeafoodCard.textContent = `優惠價：NT$${discountedSeafood}`;
+          priceSeafoodCard.style.color = 'red';
+          seafoodCardDiscounted = true;
+        } else {
+          priceSeafoodCard.textContent = `原價：NT$${originalSeafood}`;
+          priceSeafoodCard.style.color = '#1e90ff';
+          seafoodCardDiscounted = false;
+        }
       });
 
-      $('#openModalB').click(function () {
-        modalB.show();
+      priceSteakCard.addEventListener('click', () => {
+        if (!steakCardDiscounted) {
+          priceSteakCard.textContent = `優惠價：NT$${discountedSteak}`;
+          priceSteakCard.style.color = 'red';
+          steakCardDiscounted = true;
+        } else {
+          priceSteakCard.textContent = `原價：NT$${originalSteak}`;
+          priceSteakCard.style.color = '#1e90ff';
+          steakCardDiscounted = false;
+        }
       });
+
+      priceSalmonCard.addEventListener('click', () => {
+        if (!salmonCardDiscounted) {
+          priceSalmonCard.textContent = `優惠價：NT$${discountedSalmon}`;
+          priceSalmonCard.style.color = 'red';
+          salmonCardDiscounted = true;
+        } else {
+          priceSalmonCard.textContent = `原價：NT$${originalSalmon}`;
+          priceSalmonCard.style.color = '#1e90ff';
+          salmonCardDiscounted = false;
+        }
+      });
+
+      // Modal價格點擊切換
+      priceSeafoodModal.addEventListener('click', () => {
+        if (!seafoodModalDiscounted) {
+          priceSeafoodModal.textContent = discountedSeafood;
+          priceSeafoodModal.style.color = 'red';
+          seafoodModalDiscounted = true;
+        } else {
+          priceSeafoodModal.textContent = originalSeafood;
+          priceSeafoodModal.style.color = '#1e90ff';
+          seafoodModalDiscounted = false;
+        }
+      });
+
+      priceSteakModal.addEventListener('click', () => {
+        if (!steakModalDiscounted) {
+          priceSteakModal.textContent = discountedSteak;
+          priceSteakModal.style.color = 'red';
+          steakModalDiscounted = true;
+        } else {
+          priceSteakModal.textContent = originalSteak;
+          priceSteakModal.style.color = '#1e90ff';
+          steakModalDiscounted = false;
+        }
+      });
+
+      priceSalmonModal.addEventListener('click', () => {
+        if (!salmonModalDiscounted) {
+          priceSalmonModal.textContent = discountedSalmon;
+          priceSalmonModal.style.color = 'red';
+          salmonModalDiscounted = true;
+        } else {
+          priceSalmonModal.textContent = originalSalmon;
+          priceSalmonModal.style.color = '#1e90ff';
+          salmonModalDiscounted = false;
+        }
+      });
+
     });
   </script>
 </body>
